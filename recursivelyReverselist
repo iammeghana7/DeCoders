@@ -1,0 +1,18 @@
+//edited in gfg
+
+struct Node *head;
+Node* reverseList(Node *list1)
+{
+  // Your code here
+  if(list1->next==NULL)
+  {
+        head=list1;
+        return head;
+    
+  }
+  reverseList(list1->next);
+  struct Node * list2=list1->next;
+  list2->next=list1;
+  list1->next=NULL;
+  return head;
+}
